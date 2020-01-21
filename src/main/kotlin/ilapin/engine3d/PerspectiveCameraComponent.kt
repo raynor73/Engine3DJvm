@@ -4,7 +4,7 @@ import org.joml.Matrix4f
 import org.joml.Matrix4fc
 import org.joml.Vector3f
 
-class PerspectiveCameraComponent: CameraComponent() {
+class PerspectiveCameraComponent(targetTextureNames: List<String>? = null): CameraComponent(targetTextureNames) {
 
     private val projectionMatrix = Matrix4f()
     private val viewProjectionMatrix = Matrix4f()

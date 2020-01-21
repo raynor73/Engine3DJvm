@@ -3,7 +3,7 @@ package ilapin.engine3d
 import org.joml.Matrix4f
 import org.joml.Matrix4fc
 
-class OrthoCameraComponent : CameraComponent() {
+class OrthoCameraComponent(targetTextureNames: List<String>? = null) : CameraComponent(targetTextureNames) {
 
     private val projectionMatrix = Matrix4f()
 
