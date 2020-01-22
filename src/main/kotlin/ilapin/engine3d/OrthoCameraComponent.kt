@@ -3,11 +3,13 @@ package ilapin.engine3d
 import org.joml.Matrix4f
 import org.joml.Matrix4fc
 
-class OrthoCameraComponent(targetTextureNames: List<String>? = null) : CameraComponent(targetTextureNames) {
+class OrthoCameraComponent(
+    targetTextureNames: List<String>? = null
+) : CameraComponent<OrthoCameraComponent.Config>(targetTextureNames) {
 
     private val projectionMatrix = Matrix4f()
 
-    var config: Config? = null
+    /*var config: Config? = null
         set(value) {
             if (value != null) {
                 projectionMatrix.identity().ortho(
@@ -29,7 +31,7 @@ class OrthoCameraComponent(targetTextureNames: List<String>? = null) : CameraCom
         projectionMatrix.identity()
     }
 
-    override fun getViewProjectionMatrix(): Matrix4fc? = projectionMatrix
+    override fun getViewProjectionMatrix(): Matrix4fc? = projectionMatrix*/
 
     data class Config(
         val left: Float,

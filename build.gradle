@@ -7,11 +7,13 @@ group = 'com.github.raynor73'
 
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'org.joml:joml:1.9.12'
+    implementation 'com.github.raynor73:Commons:0.2'
 }
 
 compileKotlin {
