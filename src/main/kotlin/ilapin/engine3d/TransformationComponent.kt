@@ -27,6 +27,10 @@ class TransformationComponent(
         _scale.set(scale)
     }
 
+    val localPosition: Vector3fc = _position
+    val localRotation: Quaternionfc = _rotation
+    val localScale: Vector3fc = _scale
+
     var position: Vector3fc
         get() {
             calculateFinalTransformation()
@@ -57,7 +61,7 @@ class TransformationComponent(
             _scale.set(value)
         }
 
-    fun setDirty() {
+    private fun setDirty() {
         gameObject?.children?.forEach {
             val childTransformation = it.getComponent(TransformationComponent::class.java)
                 ?: throw IllegalArgumentException("No child transformation found")
