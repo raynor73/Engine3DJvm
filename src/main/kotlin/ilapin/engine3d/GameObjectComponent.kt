@@ -4,7 +4,7 @@ abstract class GameObjectComponent {
 
     var isEnabled = true
 
-    var gameObject: GameObject? = null
+    open var gameObject: GameObject? = null
 
     open fun update() {}
 }
