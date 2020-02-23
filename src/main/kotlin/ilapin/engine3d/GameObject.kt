@@ -20,6 +20,7 @@ open class GameObject(val name: String) {
     }
 
     fun removeChild(child: GameObject) {
+        child.deinit()
         _children -= child
         child._parent = null
     }
@@ -30,6 +31,7 @@ open class GameObject(val name: String) {
     }
 
     fun removeComponent(component: GameObjectComponent) {
+        component.deinit()
         components -= component
         component.gameObject = null
     }
@@ -39,6 +41,11 @@ open class GameObject(val name: String) {
             components.forEach { it.update() }
             _children.forEach { it.update() }
         }
+    }
+
+    fun deinit() {
+        _children.forEach { it.deinit() }
+        components.forEach { it.deinit() }
     }
 
     @Suppress("UNCHECKED_CAST")
