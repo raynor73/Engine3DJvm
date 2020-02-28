@@ -25,6 +25,11 @@ open class GameObject(val name: String) {
         child._parent = null
     }
 
+    fun detachChild(child: GameObject) {
+        _children -= child
+        child._parent = null
+    }
+
     fun addComponent(component: GameObjectComponent) {
         components += component
         component.gameObject = this
