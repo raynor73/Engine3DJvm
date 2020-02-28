@@ -6,6 +6,8 @@ abstract class GameObjectComponent {
 
     open var gameObject: GameObject? = null
 
+    abstract fun copy(): GameObjectComponent
+
     open fun update() {}
 
     open fun deinit() {}

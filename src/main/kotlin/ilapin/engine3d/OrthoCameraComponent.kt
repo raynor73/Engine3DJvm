@@ -31,6 +31,10 @@ class OrthoCameraComponent(targetTextureNames: List<String>?) : CameraComponent(
 
     override fun getViewProjectionMatrix(): Matrix4fc? = projectionMatrix
 
+    override fun copy(): GameObjectComponent {
+        return OrthoCameraComponent(targetTextureNames)
+    }
+
     data class Config(
         val left: Float,
         val right: Float,

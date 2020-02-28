@@ -91,4 +91,8 @@ class TransformationComponent(
             isDirty = false
         }
     }
+
+    override fun copy(): GameObjectComponent {
+        return TransformationComponent(_position, _rotation, _scale)
+    }
 }

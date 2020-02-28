@@ -28,4 +28,8 @@ class MeshComponent(
     val normals: List<Vector3fc> = _normals
     val uvs: List<Vector2fc> = _uvs
     val indices: List<Int> = _indices
+
+    override fun copy(): GameObjectComponent {
+        return MeshComponent(_vertices, _normals, _uvs, _indices)
+    }
 }

@@ -43,6 +43,15 @@ open class GameObject(val name: String) {
         }
     }
 
+    fun copy(copyName: String? = null): GameObject {
+        val copy = GameObject(copyName ?: name + nextCopyPostfix())
+
+        _children.forEach { copy.addChild(it.copy()) }
+        components.forEach { copy.addComponent(it.copy()) }
+
+        return copy
+    }
+
     fun deinit() {
         _children.forEach { it.deinit() }
         components.forEach { it.deinit() }
@@ -57,5 +66,14 @@ open class GameObject(val name: String) {
         }
 
         return null
+    }
+
+    companion object {
+
+        private var copyPostfix = 0
+
+        fun nextCopyPostfix(): Int {
+            return copyPostfix++
+        }
     }
 }

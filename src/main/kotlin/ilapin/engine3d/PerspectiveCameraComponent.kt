@@ -67,5 +67,9 @@ class PerspectiveCameraComponent(targetTextureNames: List<String>? = null): Came
         }
     }
 
+    override fun copy(): GameObjectComponent {
+        return PerspectiveCameraComponent(targetTextureNames)
+    }
+
     data class Config(val fieldOfView: Float, val zNear: Float, val zFar: Float)
 }

@@ -5,4 +5,9 @@ class MaterialComponent(
     val isDoubleSided: Boolean = false,
     val isWireframe: Boolean = false,
     val isUnlit: Boolean = false
-) : GameObjectComponent()
+) : GameObjectComponent() {
+
+    override fun copy(): GameObjectComponent {
+        return MaterialComponent(textureName, isDoubleSided, isWireframe, isUnlit)
+    }
+}
