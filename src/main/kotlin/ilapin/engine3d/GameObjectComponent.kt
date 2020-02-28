@@ -11,4 +11,13 @@ abstract class GameObjectComponent {
     open fun update() {}
 
     open fun deinit() {}
+
+    companion object {
+
+        private var copyPostfix = 0
+
+        private fun nextCopyPostfix(): Int {
+            return copyPostfix++
+        }
+    }
 }

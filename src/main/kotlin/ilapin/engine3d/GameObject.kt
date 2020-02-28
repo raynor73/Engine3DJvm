@@ -72,7 +72,7 @@ open class GameObject(val name: String) {
 
         private var copyPostfix = 0
 
-        fun nextCopyPostfix(): Int {
+        private fun nextCopyPostfix(): Int {
             return copyPostfix++
         }
     }
