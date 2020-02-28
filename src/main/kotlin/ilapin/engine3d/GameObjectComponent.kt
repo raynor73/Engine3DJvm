@@ -16,6 +16,7 @@ abstract class GameObjectComponent {
 
         private var copyPostfix = 0
 
+        @JvmStatic
         protected fun nextCopyPostfix(): Int {
             return copyPostfix++
         }
