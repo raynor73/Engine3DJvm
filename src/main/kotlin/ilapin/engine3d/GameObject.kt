@@ -80,7 +80,7 @@ open class GameObject(val name: String) {
 
     @Suppress("UNCHECKED_CAST")
     fun <T : GameObjectComponent> getComponent(clazz: Class<T>): T? {
-        return components[clazz] as T
+        return components[clazz] as T?
     }
 
     companion object {
